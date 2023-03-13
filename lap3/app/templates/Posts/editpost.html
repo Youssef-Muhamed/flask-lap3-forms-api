@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} Edit Post {% endblock %}
+{% block content %}
+<div class="container">
+    <form method="POST">
+         <div>
+             <label class="form-label" for="">title</label>
+        <input class="form-control" type="text" name="title" value="{{post.title}}">
+            </div>
+       
+        <div class="mb-3">
+            <label class="form-label" for="">body</label>
+            <input class="form-control" type="text" name="body" value="{{post.body}}">
+           
+        </div>
+
+        <button type="submit" class="btn btn-info ">Save</button>
+    </form>
+</div>
+{% endblock %}

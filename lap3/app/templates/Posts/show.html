@@ -1,0 +1,30 @@
+
+{%extends 'base.html'%}
+ {% block title  %}
+        Posts
+ {% endblock %}
+{% block content %}
+    <div class="container m-3">
+        <h2 class="text-center p-2 ">
+        Show Post
+        </h2>
+        <div class="row mx-auto" >
+            <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+            <img  class="img-fluid" src="{{ url_for('static', filename = 'images/download.jpeg') }}" alt="">
+          <div class="card-body">
+              <h5 class="card-title">{{post.title}}</h5>
+              <p class="card-text">{{post.body}}</p>
+              <p class="card-text">{{post.created}}</p>
+              <p class="card-text">Category: {{post.category}}</p>
+
+              <a href="{{ url_for("posts.deletePost",id=post.id) }}" class="btn btn-danger">Delete</a>
+              <a href="{{ url_for("posts.editpost",id=post.id) }}" class="btn btn-warning">Edit</a>
+              <a href="{{url_for('posts.posts_index')}}" class="btn btn-primary">Back to home page</a>
+          </div>
+        </div>
+                </div>
+</div>
+
+    </div>
+{% endblock %}

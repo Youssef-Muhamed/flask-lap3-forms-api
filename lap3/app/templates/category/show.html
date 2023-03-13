@@ -1,0 +1,27 @@
+
+
+{%extends 'base.html'%}
+
+ {% block title  %}
+        Posts
+ {% endblock %}
+{% block content %}
+    <div class="container m-3">
+        <h2 class="text-center p-2 ">
+        Show Category
+        </h2>
+        <div class="row mx-auto" >
+            <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+              <h5 class="card-title">Name: {{post.name}}</h5>
+              <p class="card-text">Description: {{post.desc}}</p>
+              <a href="{{ url_for("category.deleteCategory",id=post.id) }}" class="btn btn-danger">Delete</a>
+              <a href="{{url_for('category.category_index')}}" class="btn btn-primary">Back to home page</a>
+          </div>
+        </div>
+                </div>
+</div>
+
+    </div>
+{% endblock %}
